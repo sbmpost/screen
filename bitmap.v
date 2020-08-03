@@ -9,11 +9,11 @@ module bitmap(
   // 320x200 / 8 = 8000
   // 16000 gives 2 monochrome images
   reg [7:0] memory[15999:0];
-  parameter base = 8000;
+  parameter base = 0; // 8000;
 
   integer i,j;
   initial begin
-/*
+///*
     for (i=0;i<40;i=i+1) begin
       for (j=0;j<200;j=j+1) begin
         if (j % 8 && (i == 0 || i == 39))
@@ -33,8 +33,8 @@ module bitmap(
           memory[base+j*40+i] = 8'b01111111;
       end
     end
-*/
-///*
+//*/
+/*
 memory[0]=8'b11111111;
 memory[1]=8'b11111111;
 memory[2]=8'b11111111;
@@ -8035,7 +8035,9 @@ memory[7996]=8'b11111111;
 memory[7997]=8'b11111111;
 memory[7998]=8'b11111111;
 memory[7999]=8'b11111111;
+*/
 
+/*
 memory[8000]=8'b11111111;
 memory[8001]=8'b11111111;
 memory[8002]=8'b11111111;
@@ -16036,8 +16038,7 @@ memory[15996]=8'b11111111;
 memory[15997]=8'b11111111;
 memory[15998]=8'b11111111;
 memory[15999]=8'b11111111;
-
-//*/
+*/
   end
 
   always @(posedge CLK) begin

@@ -28,7 +28,8 @@ int main(int argc, char **argv, char **env) {
     tfp->open("vlt_dump.vcd");
 #endif
 
-    while (main_time < (2*800*525)+2 && !Verilated::gotFinish()) {
+    while (main_time < (4*512*312)+2 && !Verilated::gotFinish()) {
+//    while (main_time < (2*800*525)+2 && !Verilated::gotFinish()) {
         vga->eval();
 
         if ((main_time % 2) == 0) {
@@ -45,7 +46,7 @@ int main(int argc, char **argv, char **env) {
         if (vga->hwclk) {
             VL_PRINTF ("%03d clk:%03d l1:%d l2:%d l3:%d l4:%d "
                 "l5:%d l6:%d l7:%d l8:%d r_x:%02d r_y:%02d\n",
-                main_time,
+                main_time/2,
                 vga->hwclk,
                 vga->led1,
                 vga->led2,
