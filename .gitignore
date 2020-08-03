@@ -1,0 +1,7 @@
+.DS_Store
+.project
+.yosys_show_*
+.idea
+obj_dir
+build
+synth.v
